@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_scrolling" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ca.uwindsor.uwintechclub.chamberofcommerce.ScrollingActivity">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/ucDirectory_UcListing_lblTitle" android:text="@string/empty" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/ucDirectory_UcListing_lblAddress1" android:text="@string/empty" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin" android:id="@+id/ucDirectory_UcListing_lblCity" android:text="@string/empty" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin" android:id="@+id/ucDirectory_UcListing_lblStateProvince" android:text="@string/empty" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin" android:id="@+id/ucDirectory_UcListing_lblZipPostal" android:text="@string/empty" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin" android:id="@+id/ucDirectory_UcListing_lblFax" android:text="@string/empty" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin" android:id="@+id/ucDirectory_UcListing_lblPhone1" android:text="@string/empty" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin" android:id="@+id/ucDirectory_UcListing_hlEmail" android:text="@string/empty" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin" android:id="@+id/ucDirectory_UcListing_hlWebsit" android:text="@string/empty" />
+
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
