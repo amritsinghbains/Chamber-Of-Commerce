@@ -91,6 +91,11 @@ public class MainActivity extends AppCompatActivity
             }
 
         });
+
+//        searchView.setQuery("a",true);
+        searchView.setFocusable(true);
+        searchView.setIconified(false);
+        searchView.requestFocusFromTouch();
     }
 
 
@@ -350,7 +355,9 @@ public class MainActivity extends AppCompatActivity
 
 
                     record currentRecord = (record) finalResultRecord.get(itemPosition);
-                    Intent intent = new Intent(MainActivity.this, ScrollingActivity.class);
+
+//                    Intent intent = new Intent(MainActivity.this, ScrollingActivity.class);
+                    Intent intent = new Intent(MainActivity.this, MapsActivity.class);
                     Bundle b = new Bundle();
 //                    b.putInt("key", 1); //Your id
                     b.putString("ucDirectory_UcListing_lblOwner", currentRecord.ucDirectory_UcListing_lblOwner);

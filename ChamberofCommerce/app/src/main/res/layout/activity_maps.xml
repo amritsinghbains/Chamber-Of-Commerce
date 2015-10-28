@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+app:layout_behavior="@string/appbar_scrolling_view_behavior"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="ca.uwindsor.uwintechclub.chamberofcommerce.ScrollingActivity">
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:map="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+        android:layout_height="@dimen/map" android:id="@+id/map"
+        tools:context="ca.uwindsor.uwintechclub.chamberofcommerce.MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblOwner" android:text="@string/empty"
+        android:textSize="@dimen/abc_action_bar_progress_bar_size" />
+
+
+
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblTitle" android:text="@string/empty" />
+
+
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblAddress1" android:text="@string/empty" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblCity" android:text="@string/empty" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblStateProvince" android:text="@string/empty" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblZipPostal" android:text="@string/empty" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblFax" android:text="@string/empty" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblPhone1" android:text="@string/empty" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_hlEmail" android:text="@string/empty" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_hlWebsit" android:text="@string/empty" />
+
+
+
+</LinearLayout>
+</android.support.v4.widget.NestedScrollView>
