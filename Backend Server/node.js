@@ -52,7 +52,7 @@ app.get('/', function (req, res) {
 		'LOWER(ucDirectory_UcListing_hlEmail) like \'%' + req.param('q') + '%\' OR ' + 
 		'LOWER(ucDirectory_UcListing_hlWebsite) like \'%' + req.param('q')
 
-		+ '%\'';
+		+ '%\' order by ucDirectory_UcListing_lblOwner';
 
 	    var query = baseClient.query(currentQuery);
 		// res.json(currentQuery);
