@@ -1,10 +1,10 @@
 # Chamber-Of-Commerce
 
-# Website
+Website
 http://chamberofcommerce.tk
 
-# Android
+Android
 https://play.google.com/store/apps/details?id=ca.uwindsor.uwintechclub.chamberofcommerce
 
-# REST API
+REST API
 https://uwindsor.herokuapp.com/?q=QUERY
