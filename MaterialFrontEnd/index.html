@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Chamber of Commerce</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Chamber of Commerce</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="http://uwintechclub.com">UWinTech</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="http://uwintechclub.com">UWinTech</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <div class="row center">
+          <h5 class="header col s12 light">The voice of business and professionals in our region</h5>
+        </div>
+
+
+
+
+
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="icon-block">
+
+              <div class="row center">
+                <a href="javascript:show_more_menu('Accountants');" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Accountants</a>
+              </div>
+
+              <div class="row center">
+                <a href="javascript:show_more_menu('Auto');" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Auto</a>
+              </div>
+
+              <div class="row center">
+                <a href="javascript:show_more_menu('Airport');" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Airport</a>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+
+              <div class="row center">
+                <a href="javascript:show_more_menu('Engineer');" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Engineer</a>
+              </div>
+
+              <div class="row center">
+                <a href="javascript:show_more_menu('Energy');" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Energy</a>
+              </div>
+
+              <div class="row center">
+                <a href="javascript:show_more_menu('Logistics');" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Logistics</a>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+
+              <div class="row center">
+                <a href="javascript:show_more_menu('Rental');" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Rental</a>
+              </div>
+
+              <div class="row center">
+                <a href="javascript:show_more_menu('Repair');" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Repair</a>
+              </div>
+
+              <div class="row center">
+                <a href="javascript:show_more_menu('Machine');" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Machine</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      
+
+      </div>
+    </div>
+    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+  <script>
+
+function toggle_visibility(id, view) {
+       var e = document.getElementById(id);
+       if(view == 'hide')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+   }
+
+function show_more_menu(value) {
+  var x = document.getElementById("first_name2");
+  x.value = value;
+  myFunction();
+}
+function myFunction() {
+    var x = document.getElementById("first_name2");
+    toggle_visibility('loadingMask', 'show');
+    $.ajax({url: "https://uwindsor.herokuapp.com/?q=" + x.value, success: function(result){
+        // console.log(result);
+        toggle_visibility('loadingMask', 'hide');
+        $("#listOfPeople").empty();
+        for(var i=0; i<result.length; i++){
+          // console.log(result[i])
+          $("#listOfPeople").append('<li class="collection-item avatar"><i class="material-icons circle">perm_identity</i><span class="title">' + 
+            result[i].ucdirectory_uclisting_lblowner + '</span><p style="text-align:left;">' + 
+          result[i].ucdirectory_uclisting_lbladdress1 + ', ' +
+          result[i].ucdirectory_uclisting_lblcity + ', ' +
+          result[i].ucdirectory_uclisting_lblstateprovince + '<span style="float:right;">' +
+          result[i].ucdirectory_uclisting_lblphone1 + '</span></p></li>');
+        }
+    }});
+    // x.value = x.value.toUpperCase();
+}
+</script>
+
+  <div class="container">
+    <div class="section">
+
+     <div class="row">
+        <div class="input-field col s12">
+          <input id="first_name2" type="text" class="validate" onkeyup="myFunction()">
+          <label class="active" for="first_name2">Search</label>
+        </div>
+      </div>
+
+      <center>
+      <div class="preloader-wrapper big active s12" id="loadingMask" style="display: none;" >
+          <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+        </center>
+      <ul class="collection" id="listOfPeople">
+        <li class="collection-item avatar">
+        
+        <i class="material-icons circle">perm_identity</i>
+          <span class="title">First and Last Name</span> 
+          <p style="text-align:left;">
+            Address
+          <span style="float:right;">Phone Number</span>
+          </p>
+        </li>
+      </ul>
+
+      
+
+    </div>
+  </div>
+
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">UWinTech Club</h5>
+          <p class="grey-text text-lighten-4">A campus organization designed to encourage and support students with entrepreneurial aspirations</p>
+
+
+        </div>
+        
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="http://uwintechclub.com">UWinTech</a></li>
+            <li><a class="white-text" href="http://uwintechclub.com/team">Team</a></li>
+            <li><a class="white-text" href="mailto:bains118@uwinsor.ca">Amrit Singh Bains</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="mailto:bains118@uwinsor.ca">Amrit Singh Bains</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
