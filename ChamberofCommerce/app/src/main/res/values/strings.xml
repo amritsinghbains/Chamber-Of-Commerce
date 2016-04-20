@@ -4,7 +4,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="current_website">webgeeksmarketing.com</string>
+    <string name="newcompanywebsite">chamberofcommerceweb.github.io</string>
+    <string name="newcompanyname">Chamber of Commerce</string>
+
+    <string name="companywebsite">webgeeksmarketing.com</string>
     <string name="companyname">Web Geeks Marketing</string>
     <string name="companydetails">Digital technology and online marketing is often mysterious
         and stressful for small and mid-sized organizations to embrace. Our goal is to demystify

@@ -1,5 +1,6 @@
 package ca.uwindsor.uwintechclub.chamberofcommerce;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
@@ -7,8 +8,11 @@ import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -22,6 +26,41 @@ import java.util.List;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    public String phone = "";
+    public String fax = "";
+    public String email = "";
+    public String website = "";
+
+    public void phoneAction(){
+
+        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+        callIntent.setData(Uri.parse("tel:" + phone));
+        startActivity(callIntent);
+    }
+    public void faxAction(){
+
+        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+        callIntent.setData(Uri.parse("tel:" + fax));
+        startActivity(callIntent);
+    }
+    public void emailAction(){
+
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("message/rfc822");
+        i.putExtra(Intent.EXTRA_EMAIL  , new String[]{website});
+        i.putExtra(Intent.EXTRA_SUBJECT, "Contact Form through Chamber of Commerce Android App");
+        i.putExtra(Intent.EXTRA_TEXT   , "Write message here . . .");
+        try {
+            startActivity(Intent.createChooser(i, "Send mail..."));
+        } catch (android.content.ActivityNotFoundException ex) {
+//            Toast.makeText(MyActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void websiteAction()
+    {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(website));
+        startActivity(browserIntent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +86,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String ucDirectory_UcListing_hlEmail = b.getString("ucDirectory_UcListing_hlEmail");
         String ucDirectory_UcListing_hlWebsit = b.getString("ucDirectory_UcListing_hlWebsit");
 
+        phone = ucDirectory_UcListing_lblPhone1;
+        fax = ucDirectory_UcListing_lblFax;
+        email = ucDirectory_UcListing_hlEmail;
+        website = ucDirectory_UcListing_hlWebsit;
 
         setTitle(ucDirectory_UcListing_lblOwner);
 
@@ -76,6 +119,53 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 ////                        .setAction("Action", null).show();
 //            }
 //        });
+
+
+
+
+
+
+        TextView tv1;
+        tv1= (TextView)findViewById(R.id.cDirectory_UcListing_lblPhone1);
+        tv1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View arg0, MotionEvent arg1) {
+                phoneAction();
+                return false;
+            }
+        });
+
+        TextView tv2;
+        tv2= (TextView)findViewById(R.id.cDirectory_UcListing_lblFax);
+        tv2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View arg0, MotionEvent arg1) {
+                faxAction();
+                return false;
+            }
+        });
+
+        TextView tv3;
+        tv3= (TextView)findViewById(R.id.cDirectory_UcListing_hlEmail);
+        tv3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View arg0, MotionEvent arg1) {
+                emailAction();
+                return false;
+            }
+        });
+
+        TextView tv4;
+        tv4= (TextView)findViewById(R.id.cDirectory_UcListing_hlWebsit);
+        tv4.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View arg0, MotionEvent arg1) {
+                websiteAction();
+                return false;
+            }
+        });
+
+
     }
 
 

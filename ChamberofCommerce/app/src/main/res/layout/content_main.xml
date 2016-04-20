@@ -24,6 +24,54 @@
             android:hint="Search . . ."
             android:layout_gravity="center_horizontal"
             android:queryHint="Search . . ." />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="24dp">
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suggestions: "
+                android:id="@+id/button1"
+                android:background="@android:color/white" />
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accountants, "
+                android:id="@+id/button2"
+                android:background="@android:color/white"
+                android:nestedScrollingEnabled="true"
+                android:onClick="clickedSuggestion1" />
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Engineer, "
+                android:id="@+id/button3"
+                android:background="@android:color/white"
+                android:onClick="clickedSuggestion2" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rental, "
+                android:id="@+id/button4"
+                android:background="@android:color/white"
+                android:onClick="clickedSuggestion3" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto"
+                android:id="@+id/button5"
+                android:background="@android:color/white"
+                android:onClick="clickedSuggestion4" />
+        </LinearLayout>
+
 
         <ListView
             android:layout_width="match_parent"

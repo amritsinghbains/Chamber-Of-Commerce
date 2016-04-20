@@ -6,13 +6,15 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 app:layout_behavior="@string/appbar_scrolling_view_behavior"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context="ca.uwindsor.uwintechclub.chamberofcommerce.ScrollingActivity">
+tools:context="ca.uwindsor.uwintechclub.chamberofcommerce.ScrollingActivity"
+    android:background="?attr/colorPrimary">
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="?attr/colorPrimary">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -23,36 +25,52 @@ tools:context="ca.uwindsor.uwintechclub.chamberofcommerce.ScrollingActivity">
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblOwner" android:text="@string/empty"
-        android:textSize="@dimen/abc_action_bar_progress_bar_size" />
-
-
-
-
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblTitle" android:text="@string/empty" />
+        android:textSize="@dimen/abc_action_bar_progress_bar_size"
+        android:textColor="@android:color/white" />
 
 
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblAddress1" android:text="@string/empty" />
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblTitle" android:text="Title"
+        android:textSize="@dimen/abc_text_size_headline_material"
+        android:textColor="@android:color/white" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" android:layout_margin="8dp" >
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="4dp" android:id="@+id/cDirectory_UcListing_lblAddress1" android:text="Address"
+            android:textColor="@android:color/white" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="4dp" android:id="@+id/cDirectory_UcListing_lblCity" android:text="City"
+            android:textColor="@android:color/white" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="4dp" android:id="@+id/cDirectory_UcListing_lblStateProvince" android:text="State"
+            android:textColor="@android:color/white" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="4dp" android:id="@+id/cDirectory_UcListing_lblZipPostal" android:text="Postal"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblPhone1" android:text="Phone"
+        android:textColor="@android:color/white"
+        android:onClick="phoneAction" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblFax" android:text="Fax"
+        android:textColor="@android:color/white"
+        android:onClick="faxAction" />
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblCity" android:text="@string/empty" />
-
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_hlEmail" android:text="Email"
+        android:textColor="@android:color/white"
+        android:onClick="emailAction" />
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblStateProvince" android:text="@string/empty" />
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblZipPostal" android:text="@string/empty" />
-
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblFax" android:text="@string/empty" />
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_lblPhone1" android:text="@string/empty" />
-
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_hlEmail" android:text="@string/empty" />
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_hlWebsit" android:text="@string/empty" />
+        android:layout_margin="@dimen/text_margin" android:id="@+id/cDirectory_UcListing_hlWebsit" android:text="Website"
+        android:textColor="@android:color/white"
+        android:onClick="websiteAction" />
 
 
 

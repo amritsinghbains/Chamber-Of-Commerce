@@ -1,6 +1,7 @@
 package ca.uwindsor.uwintechclub.chamberofcommerce;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -40,6 +41,28 @@ public class MainActivity extends AppCompatActivity
     String apiURL = "https://uwindsor.herokuapp.com/?q=";
     MainActivity that;
 
+
+    public void clickedSuggestion1(View v)
+    {
+        SearchView searchView = (SearchView) findViewById(R.id.searchView);
+        searchView.setQuery("Accountant", true);
+    }
+    public void clickedSuggestion2(View v)
+    {
+        SearchView searchView = (SearchView) findViewById(R.id.searchView);
+        searchView.setQuery("Engineer", true);
+    }
+    public void clickedSuggestion3(View v)
+    {
+        SearchView searchView = (SearchView) findViewById(R.id.searchView);
+        searchView.setQuery("Rental", true);
+    }
+    public void clickedSuggestion4(View v)
+    {
+        SearchView searchView = (SearchView) findViewById(R.id.searchView);
+        searchView.setQuery("Auto", true);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,14 +71,14 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setVisibility(0);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab.setVisibility(View.INVISIBLE);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -93,7 +116,7 @@ public class MainActivity extends AppCompatActivity
         });
 
 //        searchView.setQuery("a",true);
-        searchView.setFocusable(true);
+//        searchView.setFocusable(true);
         searchView.setIconified(false);
         searchView.requestFocusFromTouch();
     }
@@ -160,7 +183,8 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_send) {
-
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.webgeeksmarketing.com"));
+            startActivity(browserIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
